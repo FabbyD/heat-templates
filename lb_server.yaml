@@ -19,9 +19,6 @@ parameters:
   network:
     type: string
     description: Network used by the server
-  subnet:
-    type: string
-    description: Subnet used by the server
 
 resources:
   server:
@@ -39,7 +36,6 @@ resources:
       pool_id: {get_param: pool_id}
       address: {get_attr: [server, first_address]}
       protocol_port: 80
-      subnet: {get_param: subnet}
 
 outputs:
   server_ip:
